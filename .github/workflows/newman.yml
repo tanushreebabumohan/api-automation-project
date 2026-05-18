@@ -1,0 +1,26 @@
+name: Run Newman Tests
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  newman-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run API Tests
+        run: |
+          newman run PostmanCICDFlow.postman_collection.json -e base_url.postman_environment.json
