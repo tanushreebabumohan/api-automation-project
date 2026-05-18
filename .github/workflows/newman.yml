@@ -18,13 +18,15 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Newman
-        run: npm install -g newman
+      - name: Install Newman and Reporter
+        run: |
+          npm install -g newman
+          npm install -g newman-reporter-htmlextra
 
       - name: Run API Tests
         run: |
-          mkdir -p reports
-          newman run PostmanCICDFlow.postman_collection.json -e base_url.postman_environment.json -r htmlextra --reporter-htmlextra-export reports/report.html
+          mkdir reports
+          newman run PostmanCICDFlow.postman_collection.json -e base_url.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export reports/report.html
 
       - name: Upload Newman Report
         uses: actions/upload-artifact@v4
