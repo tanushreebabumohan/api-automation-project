@@ -101,16 +101,7 @@
     },
     {
       "name": "DELETEAPIs",
-      "item": [
-        {
-          "name": "DeleteUsers",
-          "request": {
-            "method": "GET",
-            "header": []
-          },
-          "response": []
-        }
-      ]
+      "item": []
     }
   ]
 }
