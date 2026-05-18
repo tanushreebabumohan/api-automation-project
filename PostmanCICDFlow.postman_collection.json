@@ -28,6 +28,25 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "NewGetUsers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://dummyjson.com/users",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
