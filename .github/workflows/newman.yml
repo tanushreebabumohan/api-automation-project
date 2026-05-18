@@ -23,4 +23,5 @@ jobs:
 
       - name: Run API Tests
         run: |
-          newman run PostmanCICDFlow.postman_collection.json -e base_url.postman_environment.json
+          mkdir -p reports
+          newman run PostmanCICDFlow.postman_collection.json -e base_url.postman_environment.json -r htmlextra --reporter-htmlextra-export reports/report.html
